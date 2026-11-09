@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Film Gecemiz 💗</title>
+
+<style>
+body {
+    background: linear-gradient(135deg, #ffd6e7, #f7a8c8);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.kutu {
+    background: white;
+    padding: 40px 25px;
+    border-radius: 25px;
+    text-align: center;
+    width: 360px;
+    max-width: calc(100vw - 90px);
+    box-shadow: 0 10px 30px #d77da566;
+}
+
+.baslik {
+    color: #e75480;
+    font-size: 34px;
+    line-height: 1.3;
+}
+
+p {
+    color: #777;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+button {
+    border: none;
+    padding: 14px 22px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+}
+
+#evet, #hakli {
+    background: #e75480;
+    color: white;
+}
+
+#hayir, #hadi {
+    background: #ddd;
+    color: #555;
+}
+
+#hadi {
+    position: relative;
+}
+
+#sonuc {
+    color: #e75480;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.emoji {
+    font-size: 55px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="kutu" id="kutu">
+
+    <div class="emoji">🍿💗</div>
+
+    <h1 class="baslik">
+        Turann benimle film izler misin?
+    </h1>
+
+    <p>Sen, ben ve güzel bir film...</p>
+
+    <button id="evet" onclick="ikinciEkran()">
+        EVET 💕
+    </button>
+
+    <button id="hayir" onmouseover="kac(this)" onclick="kac(this)">
+        HAYIR 🙈
+    </button>
+
+</div>
+
+<script>
+
+function ikinciEkran() {
+
+    document.getElementById("kutu").innerHTML = `
+
+        <div class="emoji">🥹💗</div>
+
+        <h1 class="baslik">
+            Çok doğru bir tercih yaptın!
+        </h1>
+
+        <p>
+        Benimle izlemeyip Sude'yle izleyecek halin yok ya!😡
+        </p>
+
+        <h2 style="color:#e75480">
+        Kabul ediyor musun? 😌
+        </h2>
+
+        <button id="hakli" onclick="sonEkran()">
+            Haklısın diva💗
+        </button>
+
+        <button id="hadi" onmouseover="kac(this)" onclick="kac(this)">
+            Hadi ya 🙄
+        </button>
+
+    `;
+}
+
+function kac(buton) {
+
+    buton.style.position = "fixed";
+
+    buton.style.left =
+    Math.random() * (window.innerWidth - buton.offsetWidth) + "px";
+
+    buton.style.top =
+    Math.random() * (window.innerHeight - buton.offsetHeight) + "px";
+}
+
+function sonEkran() {
+
+    document.getElementById("kutu").innerHTML = `
+
+        <div class="emoji">🍿🥰💗</div>
+
+        <h1 class="baslik">
+            FiLM VAKTİ!
+        </h1>
+
+        <p>
+        En güzel film, en güzel eşlikçiyle izlenir YANİ PRENSES SEMİNOYLA. 💕
+        </p>
+
+        <div style="font-size:40px">
+        ❤️🍿❤️
+        </div>
+
+    `;
+}
+
+</script>
+
+</body>
+</html>
